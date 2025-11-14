@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA11-220501098-AA1-EV02 - Buenas Prácticas de Calidad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .portada {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .portada h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .portada .info {
+            font-size: 1.2em;
+            margin: 15px 0;
+            opacity: 0.95;
+        }
+        
+        .portada .codigo {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 30px auto;
+            max-width: 600px;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 60px 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .instrumento {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .instrumento h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .lista {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        
+        .lista li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .tabla-container {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .proceso {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .proceso-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #e9ecef;
+        }
+        
+        .proceso-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .proceso-numero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .conclusiones-list {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .conclusiones-list li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            color: #333;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        @media print {
+            .portada {
+                page-break-after: always;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .portada h1 {
+                font-size: 1.8em;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PORTADA -->
+        <div class="portada">
+            <h1>Aplicación de Buenas Prácticas de Calidad en Software</h1>
+            <div class="codigo">GA11-220501098-AA1-EV02</div>
+            <div class="info"><strong>Aprendiz:</strong> Sergio Afanador Bayona</div>
+            <div class="info"><strong>Programa:</strong> Análisis y Desarrollo de Software</div>
+            <div class="info"><strong>Ficha:</strong> 2885494</div>
+            <div class="info"><strong>Fecha:</strong> Noviembre 2025</div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="content">
+            <!-- INTRODUCCIÓN -->
+            <div class="section">
+                <h2>Introducción</h2>
+                <p>
+                    La calidad del software es un aspecto fundamental en el desarrollo de aplicaciones modernas, ya que determina no solo la funcionalidad del producto final, sino también su mantenibilidad, escalabilidad y satisfacción del usuario. En un entorno tecnológico cada vez más competitivo, implementar buenas prácticas de calidad se ha convertido en una necesidad imperativa para garantizar el éxito de los proyectos de software.
+                </p>
+                <p>
+                    Este documento presenta una compilación de buenas prácticas de calidad de software, alineadas con los marcos de trabajo reconocidos en la industria. El objetivo es proporcionar instrumentos prácticos y procedimientos documentados que permitan optimizar el proceso de desarrollo, reducir la curva de aprendizaje y facilitar el acceso a información técnica relevante.
+                </p>
+                <p>
+                    A través de este trabajo se abordarán los fundamentos de calidad de software, se diseñarán instrumentos específicos para su gestión, se aplicarán procesos personales de desarrollo (PSP - Personal Software Process) y se documentarán metodologías que garanticen la entrega de productos de software de alta calidad.
+                </p>
+            </div>
+
+            <!-- FUNDAMENTOS DE CALIDAD DE SOFTWARE -->
+            <div class="section">
+                <h2>1. Fundamentos de Calidad de Software</h2>
+                
+                <h3>1.1 ¿Qué es la Calidad de Software?</h3>
+                <p>
+                    La calidad de software se define como el grado en que un producto de software cumple con los requisitos especificados y satisface las necesidades y expectativas del usuario. La norma ISO/IEC 25010 establece un modelo de calidad que incluye características como funcionalidad, confiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.
+                </p>
+
+                <h3>1.2 Importancia de las Buenas Prácticas</h3>
+                <div class="highlight">
+                    <p><strong>Las buenas prácticas de calidad permiten:</strong></p>
+                    <ul class="lista">
+                        <li>Reducir costos de mantenimiento y corrección de errores</li>
+                        <li>Mejorar la productividad del equipo de desarrollo</li>
+                        <li>Aumentar la satisfacción del cliente</li>
+                        <li>Facilitar la escalabilidad y evolución del software</li>
+                        <li>Disminuir el tiempo de entrega de nuevas funcionalidades</li>
+                    </ul>
+                </div>
+
+                <h3>1.3 Marcos de Trabajo Principales</h3>
+                <div class="tabla-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Marco de Trabajo</th>
+                                <th>Enfoque Principal</th>
+                                <th>Aplicación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CMMI</strong></td>
+                                <td>Mejora de procesos</td>
+                                <td>Organizaciones que buscan madurez en sus procesos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO 9001</strong></td>
+                                <td>Sistema de gestión de calidad</td>
+                                <td>Certificación y estandarización de procesos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SCRUM</strong></td>
+                                <td>Desarrollo ágil iterativo</td>
+                                <td>Proyectos con requisitos cambiantes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO/IEC 25010</strong></td>
+                                <td>Modelo de calidad del producto</td>
+                                <td>Evaluación de características de calidad</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PSP/TSP</strong></td>
+                                <td>Proceso personal/equipo</td>
+                                <td>Mejora individual y de equipos pequeños</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- INSTRUMENTOS DE CALIDAD -->
+            <div class="section">
+                <h2>2. Instrumentos de Calidad de Software</h2>
+
+                <div class="instrumento">
+                    <h4>2.1 Checklist de Revisión de Código</h4>
+                    <p><strong>Objetivo:</strong> Verificar que el código cumple con estándares de calidad antes de su integración.</p>
+                    <ul class="lista">
+                        <li>✓ El código sigue las convenciones de nomenclatura establecidas</li>
+                        <li>✓ Las funciones no exceden 50 líneas de código</li>
+                        <li>✓ Existe documentación para métodos públicos</li>
+                        <li>✓ No existen variables globales innecesarias</li>
+                        <li>✓ Se implementan validaciones de entrada de datos</li>
+                        <li>✓ El código está libre de comentarios obsoletos</li>
+                        <li>✓ Se utilizan nombres descriptivos para variables y funciones</li>
+                        <li>✓ Se aplican principios SOLID cuando corresponde</li>
+                    </ul>
+                </div>
+
+                <div class="instrumento">
+                    <h4>2.2 Plantilla de Pruebas Unitarias</h4>
+                    <p><strong>Objetivo:</strong> Documentar casos de prueba para garantizar la funcionalidad correcta del código.</p>
+                    <div class="tabla-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID Prueba</th>
+                                    <th>Descripción</th>
+                                    <th>Entrada</th>
+                                    <th>Resultado Esperado</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UT-001</td>
+                                    <td>Validar login con credenciales correctas</td>
+                                    <td>user: admin, pass: 1234</td>
+                                    <td>Acceso concedido</td>
+                                    <td>Pendiente</td>
+                                </tr>
+                                <tr>
+                                    <td>UT-002</td>
+                                    <td>Validar login con credenciales incorrectas</td>
+                                    <td>user: admin, pass: wrong</td>
+                                    <td>Acceso denegado</td>
+                                    <td>Pendiente</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="instrumento">
+                    <h4>2.3 Registro de Defectos</h4>
+                    <p><strong>Objetivo:</strong> Documentar y hacer seguimiento a los errores detectados durante el desarrollo.</p>
+                    <div class="tabla-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID Defecto</th>
+                                    <th>Severidad</th>
+                                    <th>Descripción</th>
+                                    <th>Responsable</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DEF-001</td>
+                                    <td>Alta</td>
+                                    <td>Error al guardar datos en formulario</td>
+                                    <td>Desarrollador A</td>
+                                    <td>Abierto</td>
+                                </tr>
+                                <tr>
+                                    <td>DEF-002</td>
+                                    <td>Media</td>
+                                    <td>Botón de cancelar no funciona</td>
+                                    <td>Desarrollador B</td>
+                                    <td>En progreso</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="instrumento">
+                    <h4>2.4 Métrica de Calidad de Código</h4>
+                    <p><strong>Objetivo:</strong> Medir objetivamente la calidad del código producido.</p>
+                    <ul class="lista">
+                        <li><strong>Complejidad Ciclomática:</strong> Mide el número de caminos independientes (ideal < 10)</li>
+                        <li><strong>Cobertura de Código:</strong> Porcentaje de código cubierto por pruebas (meta > 80%)</li>
+                        <li><strong>Duplicación de Código:</strong> Porcentaje de código duplicado (meta < 5%)</li>
+                        <li><strong>Deuda Técnica:</strong> Tiempo estimado para corregir problemas de calidad</li>
+                        <li><strong>Densidad de Defectos:</strong> Número de defectos por cada 1000 líneas de código</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BUENAS PRÁCTICAS -->
+            <div class="section">
+                <h2>3. Buenas Prácticas de Calidad Seleccionadas</h2>
+
+                <h3>3.1 Prácticas de Codificación</h3>
+                <div class="instrumento">
+                    <h4>Clean Code (Código Limpio)</h4>
+                    <ul class="lista">
+                        <li><strong>Nombres significativos:</strong> Usar nombres descriptivos que revelen la intención</li>
+                        <li><strong>Funciones pequeñas:</strong> Una función debe hacer una sola cosa y hacerla bien</li>
+                        <li><strong>Comentarios mínimos:</strong> El código debe auto-documentarse, usar comentarios solo cuando sea necesario</li>
+                        <li><strong>Formato consistente:</strong> Mantener un estilo de código uniforme en todo el proyecto</li>
+                        <li><strong>Manejo de errores:</strong> Implementar try-catch apropiados y mensajes de error claros</li>
+                    </ul>
+                </div>
+
+                <h3>3.2 Prácticas de Testing</h3>
+                <div class="instrumento">
+                    <h4>Test Driven Development (TDD)</h4>
+                    <ul class="lista">
+                        <li><strong>Red:</strong> Escribir primero una prueba que falle</li>
+                        <li><strong>Green:</strong> Escribir el código mínimo para que la prueba pase</li>
+                        <li><strong>Refactor:</strong> Mejorar el código manteniendo las pruebas en verde</li>
+                        <li><strong>Automatización:</strong> Ejecutar pruebas automáticamente en cada commit</li>
+                        <li><strong>Pirámide de pruebas:</strong> Muchas unitarias, algunas de integración, pocas E2E</li>
+                    </ul>
+                </div>
+
+                <h3>3.3 Prácticas de Versionamiento</h3>
+                <div class="instrumento">
+                    <h4>Control de Versiones con Git</h4>
+                    <ul class="lista">
+                        <li><strong>Commits atómicos:</strong> Cada commit debe representar un cambio lógico completo</li>
+                        <li><strong>Mensajes descriptivos:</strong> Usar formato: "tipo: descripción breve"</li>
+                        <li><strong>Branching strategy:</strong> Implementar Git Flow o GitHub Flow</li>
+                        <li><strong>Code Review:</strong> Todo código debe ser revisado antes de merge</li>
+                        <li><strong>Pull Requests:</strong> Documentar cambios y solicitar retroalimentación</li>
+                    </ul>
+                </div>
+
+                <h3>3.4 Prácticas de Documentación</h3>
+                <div class="instrumento">
+                    <h4>Documentación Técnica</h4>
+                    <ul class="lista">
+                        <li><strong>README completo:</strong> Instrucciones de instalación, uso y contribución</li>
+                        <li><strong>API Documentation:</strong> Documentar endpoints, parámetros y respuestas</li>
+                        <li><strong>Diagramas UML:</strong> Casos de uso, clases, secuencia según necesidad</li>
+                        <li><strong>Changelog:</strong> Registro de cambios entre versiones</li>
+                        <li><strong>Wiki del proyecto:</strong> Decisiones de arquitectura y guías técnicas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROCESO PERSONAL PSP -->
+            <div class="section">
+                <h2>4. Proceso Personal de Desarrollo de Software (PSP)</h2>
+                
+                <p>
+                    El Personal Software Process (PSP) es un marco de trabajo desarrollado por Watts Humphrey en el SEI (Software Engineering Institute) que permite a los desarrolladores mejorar su desempeño individual mediante la medición y análisis de su propio trabajo.
+                </p>
+
+                <h3>4.1 Fases del PSP</h3>
+                <div class="proceso">
+                    <div class="proceso-item">
+                        <div class="proceso-numero">1</div>
+                        <h4>Planificación</h4>
+                        <p>Estimar tiempo y recursos necesarios basándose en datos históricos</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">2</div>
+                        <h4>Diseño</h4>
+                        <p>Crear diseño detallado antes de codificar, revisar diseño</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">3</div>
+                        <h4>Codificación</h4>
+                        <p>Implementar siguiendo estándares, registrar tiempo real</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">4</div>
+                        <h4>Revisión</h4>
+                        <p>Revisar código antes de compilar, registrar defectos</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">5</div>
+                        <h4>Compilación</h4>
+                        <p>Compilar y corregir errores de sintaxis</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">6</div>
+                        <h4>Pruebas</h4>
+                        <p>Ejecutar pruebas, registrar y corregir defectos</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">7</div>
+                        <h4>Post-mortem</h4>
+                        <p>Analizar datos, calcular métricas y mejorar estimaciones</p>
+                    </div>
+                </div>
+
+                <h3>4.2 Métricas del PSP</h3>
+                <div class="tabla-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Descripción</th>
+                                <th>Fórmula</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tamaño del Producto</strong></td>
+                                <td>Líneas de código (LOC)</td>
+                                <td>LOC totales - LOC reutilizadas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tiempo de Desarrollo</strong></td>
+                                <td>Minutos totales invertidos</td>
+                                <td>Suma de tiempo en cada fase</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Densidad de Defectos</strong></td>
+                                <td>Defectos por KLOC</td>
+                                <td>(Total defectos / LOC) × 1000</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rendimiento</strong></td>
+                                <td>LOC por hora</td>
+                                <td>LOC totales / Horas trabajadas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>4.3 Beneficios del PSP</h3>
+                <ul class="lista">
+                    <li>Mejora la precisión en estimaciones de tiempo y esfuerzo</li>
+                    <li>Reduce la cantidad de defectos inyectados en el código</li>
+                    <li>Aumenta la productividad personal</li>
+                    <li>Proporciona datos para la mejora continua</li>
+                    <li>Desarrolla disciplina en el proceso de desarrollo</li>
+                </ul>
+            </div>
+
+            <!-- DOCUMENTACIÓN DEL PROCESO -->
+            <div class="section">
+                <h2>5. Documentación del Proceso de Calidad</h2>
+
+                <h3>5.1 Plan de Gestión de Calidad</h3>
+                <div class="instrumento">
+                    <h4>Componentes del Plan</h4>
+                    <ul class="lista">
+                        <li><strong>Objetivos de Calidad:</strong> Definir metas específicas y medibles</li>
+                        <li><strong>Estándares Aplicables:</strong> ISO 9001, ISO 25010, estándares de codificación</li>
+                        <li><strong>Roles y Responsabilidades:</strong> Definir quién es responsable de cada actividad</li>
+                        <li><strong>Recursos Necesarios:</strong> Herramientas, tiempo, presupuesto</li>
+                        <li><strong>Cronograma de Actividades:</strong> Cuándo se ejecutarán las actividades de calidad</li>
+                        <li><strong>Métricas de Calidad:</strong> Qué se medirá y cómo se analizará</li>
+                        <li><strong>Proceso de Mejora:</strong> Cómo se implementarán las mejoras identificadas</li>
+                    </ul>
+                </div>
+
+                <h3>5.2 Procedimiento de Control de Calidad</h3>
+                <div class="instrumento">
+                    <h4>Actividades de Control</h4>
+                    <ol class="lista">
+                        <li><strong>Revisión de Requisitos:</strong> Verificar que requisitos sean claros y completos</li>
+                        <li><strong>Revisión de Diseño:</strong> Evaluar arquitectura y diseño técnico</li>
+                        <li><strong>Inspección de Código:</strong> Revisión por pares de código desarrollado</li>
+                        <li><strong>Ejecución de Pruebas:</strong> Pruebas unitarias, integración y sistema</li>
+                        <li><strong>Análisis de Métricas:</strong> Evaluar métricas de calidad del código</li>
+                        <li><strong>Auditoría de Proceso:</strong> Verificar cumplimiento del proceso definido</li>
+                    </ol>
+                </div>
+
+                <h3>5.3 Herramientas TIC para Calidad</h3>
+                <div class="tabla-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Herramienta</th>
+                                <th>Categoría</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SonarQube</strong></td>
+                                <td>Análisis estático</td>
+                                <td>Detectar bugs, vulnerabilidades y code smells</td>
+                            </tr>
+                            <tr>
+                                <td><strong>JUnit / Jest</strong></td>
+                                <td>Testing</td>
+                                <td>Pruebas unitarias automatizadas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Selenium</strong></td>
+                                <td>Testing</td>
+                                <td>Pruebas de interfaz automatizadas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Git / GitHub</strong></td>
+                                <td>Versionamiento</td>
+                                <td>Control de versiones y colaboración</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jira</strong></td>
+                                <td>Gestión</td>
+                                <td>Seguimiento de tareas y defectos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jenkins</strong></td>
+                                <td>CI/CD</td>
+                                <td>Integración y despliegue continuo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ESLint / Prettier</strong></td>
+                                <td>Linting</td>
+                                <td>Formateo y verificación de estilo de código</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CONCLUSIONES -->
+            <div class="section">
+                <h2>Conclusiones</h2>
+                <div class="conclusiones-list">
+                    <ol class="lista">
+                        <li>
+                            <strong>La implementación de buenas prácticas de calidad es esencial</strong> para el desarrollo de software moderno. No se trata solo de cumplir con estándares, sino de crear una cultura de calidad que permea todas las fases del desarrollo y garantiza productos superiores que satisfacen las necesidades del usuario final.
+                        </li>
+                        <li>
+                            <strong>Los instrumentos de calidad diseñados</strong> (checklists, plantillas de pruebas, registros de defectos y métricas) proporcionan herramientas concretas y aplicables que facilitan la gestión sistemática de la calidad. Estos instrumentos no solo documentan el proceso, sino que también permiten la mejora continua basada en datos objetivos.
+                        </li>
+                        <li>
+                            <strong>El Proceso Personal de Desarrollo de Software (PSP)</strong> demuestra ser una metodología
