@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA11-220501098-AA1-EV03 - Instrumentos de Calidad</title>
+    <title>GA11-220501098-AA1-EV02 - Buenas Prácticas de Calidad</title>
     <style>
         * {
             margin: 0;
@@ -14,22 +14,22 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
         }
         
         .portada {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 80px 40px;
             text-align: center;
@@ -37,389 +37,177 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .portada::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,100 C150,150 350,0 600,80 C850,160 1050,50 1200,100 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-        }
-        
-        .portada-content {
-            position: relative;
-            z-index: 1;
         }
         
         .portada h1 {
-            font-size: 2.8em;
+            font-size: 2.5em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInDown 1s ease;
         }
         
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .portada .subtitulo {
-            font-size: 1.5em;
-            margin-bottom: 30px;
+        .portada .info {
+            font-size: 1.2em;
+            margin: 15px 0;
             opacity: 0.95;
         }
         
         .portada .codigo {
             background: rgba(255,255,255,0.2);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 15px;
+            border-radius: 8px;
             margin: 30px auto;
-            max-width: 700px;
+            max-width: 600px;
             font-weight: bold;
-            font-size: 1.1em;
-            backdrop-filter: blur(10px);
-        }
-        
-        .portada .info {
-            font-size: 1.2em;
-            margin: 12px 0;
-            opacity: 0.95;
         }
         
         .content {
-            padding: 60px 50px;
+            padding: 60px 40px;
         }
         
         .section {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             animation: fadeIn 0.8s ease-in;
         }
         
         @keyframes fadeIn {
-            from { 
-                opacity: 0; 
-                transform: translateY(20px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         h2 {
-            color: #1e3c72;
-            font-size: 2.2em;
-            margin-bottom: 25px;
-            border-left: 5px solid #2a5298;
-            padding-left: 20px;
-            position: relative;
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
         }
         
         h3 {
-            color: #2a5298;
-            font-size: 1.6em;
-            margin: 35px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e0e0e0;
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
         }
         
         p {
             text-align: justify;
-            margin-bottom: 18px;
-            color: #333;
-            font-size: 1.05em;
-        }
-        
-        /* Infografía Styles */
-        .infografia-container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            padding: 40px;
-            margin: 40px 0;
-            color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .infografia-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .infografia-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .infografia-card {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 25px;
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .infografia-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-        }
-        
-        .infografia-icon {
-            font-size: 3em;
-            text-align: center;
             margin-bottom: 15px;
+            color: #333;
         }
         
-        .infografia-card h4 {
-            font-size: 1.3em;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        
-        .infografia-card p {
-            color: rgba(255,255,255,0.95);
-            text-align: center;
-            font-size: 0.95em;
-        }
-        
-        /* Instrumentos Diligenciados */
         .instrumento {
             background: #f8f9fa;
-            border-left: 5px solid #2a5298;
-            padding: 30px;
-            margin: 30px 0;
-            border-radius: 8px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .instrumento-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #dee2e6;
+        .instrumento h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
         }
         
-        .instrumento-numero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-right: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        .lista {
+            margin-left: 20px;
+            margin-top: 15px;
         }
         
-        .instrumento-header h4 {
-            color: #1e3c72;
-            font-size: 1.5em;
-            margin: 0;
+        .lista li {
+            margin-bottom: 10px;
+            color: #555;
         }
         
         .tabla-container {
             overflow-x: auto;
             margin: 25px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
             background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         th {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 15px;
             text-align: left;
             font-weight: bold;
-            font-size: 1.05em;
         }
         
         td {
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 0.95em;
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
         }
         
         tr:hover {
-            background: #f1f3f5;
+            background: #f5f5f5;
         }
         
-        .status-badge {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.85em;
-            display: inline-block;
+        .highlight {
+            background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
         }
         
-        .status-aprobado {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .status-pendiente {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        .status-revision {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-        
-        .status-critico {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        
-        .status-alta {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        
-        .status-media {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        .status-baja {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-        
-        .checklist {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .checklist li {
-            padding: 12px;
-            margin: 8px 0;
-            background: white;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-        
-        .checklist li:hover {
-            transform: translateX(5px);
-        }
-        
-        .checklist .check-icon {
-            color: #28a745;
-            font-size: 1.3em;
-            margin-right: 12px;
-        }
-        
-        .checklist .cross-icon {
-            color: #dc3545;
-            font-size: 1.3em;
-            margin-right: 12px;
-        }
-        
-        .metricas-grid {
+        .proceso {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            gap: 20px;
             margin: 30px 0;
         }
         
-        .metrica-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
+        .proceso-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-top: 4px solid #2a5298;
+            transition: transform 0.3s ease;
+            border: 2px solid #e9ecef;
         }
         
-        .metrica-valor {
-            font-size: 3em;
-            font-weight: bold;
-            color: #1e3c72;
-            margin: 15px 0;
+        .proceso-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
-        .metrica-label {
-            color: #6c757d;
-            font-size: 1.1em;
-        }
-        
-        .metrica-estado {
-            margin-top: 10px;
+        .proceso-numero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5em;
             font-weight: bold;
         }
         
         .conclusiones-list {
             background: #f8f9fa;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-radius: 8px;
         }
         
         .conclusiones-list li {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            color: #333;
-            line-height: 1.8;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 25px 0;
-            border-left: 5px solid #28a745;
-        }
-        
-        .highlight-box h4 {
-            color: #155724;
             margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-        
-        .highlight-box p {
-            color: #155724;
-            margin-bottom: 10px;
+            padding-left: 10px;
+            color: #333;
         }
         
         .footer {
-            background: #1e3c72;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 40px;
-        }
-        
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 30px;
         }
         
         @media print {
@@ -439,10 +227,7 @@
                 padding: 30px 20px;
             }
             h2 {
-                font-size: 1.6em;
-            }
-            .infografia-grid {
-                grid-template-columns: 1fr;
+                font-size: 1.5em;
             }
         }
     </style>
@@ -451,295 +236,429 @@
     <div class="container">
         <!-- PORTADA -->
         <div class="portada">
-            <div class="portada-content">
-                <h1>📋 Diseño y Diligenciamiento de Instrumentos</h1>
-                <p class="subtitulo">Para Documentar Procesos de Calidad del Software</p>
-                <div class="codigo">GA11-220501098-AA1-EV03</div>
-                <div class="info"><strong>👨‍💻 Aprendiz:</strong> Sergio Afanador Bayona</div>
-                <div class="info"><strong>💻 Programa:</strong> Análisis y Desarrollo de Software</div>
-                <div class="info"><strong>🎓 Ficha:</strong> 2885494</div>
-                <div class="info"><strong>📅 Fecha:</strong> Noviembre 2025</div>
-            </div>
+            <h1>Aplicación de Buenas Prácticas de Calidad en Software</h1>
+            <div class="codigo">GA11-220501098-AA1-EV02</div>
+            <div class="info"><strong>Aprendiz:</strong> Sergio Afanador Bayona</div>
+            <div class="info"><strong>Programa:</strong> Análisis y Desarrollo de Software</div>
+            <div class="info"><strong>Ficha:</strong> 2885494</div>
+            <div class="info"><strong>Fecha:</strong> Noviembre 2025</div>
         </div>
 
         <!-- CONTENIDO -->
         <div class="content">
             <!-- INTRODUCCIÓN -->
             <div class="section">
-                <h2>📖 Introducción</h2>
+                <h2>Introducción</h2>
                 <p>
-                    La documentación efectiva de los procesos de calidad de software es fundamental para garantizar la trazabilidad, mejora continua y estandarización de las prácticas de desarrollo. Los instrumentos de calidad no solo deben ser técnicamente robustos, sino también amigables, intuitivos y fáciles de diligenciar por todos los miembros del equipo de desarrollo.
+                    La calidad del software es un aspecto fundamental en el desarrollo de aplicaciones modernas, ya que determina no solo la funcionalidad del producto final, sino también su mantenibilidad, escalabilidad y satisfacción del usuario. En un entorno tecnológico cada vez más competitivo, implementar buenas prácticas de calidad se ha convertido en una necesidad imperativa para garantizar el éxito de los proyectos de software.
                 </p>
                 <p>
-                    Este documento presenta el diseño y diligenciamiento completo de los instrumentos de calidad de software desarrollados en la actividad GA11-220501098-AA1-EV02. Se ha puesto especial énfasis en crear formatos que sean prácticos, visuales y que permitan una captura eficiente de información relevante para el aseguramiento de la calidad.
+                    Este documento presenta una compilación de buenas prácticas de calidad de software, alineadas con los marcos de trabajo reconocidos en la industria. El objetivo es proporcionar instrumentos prácticos y procedimientos documentados que permitan optimizar el proceso de desarrollo, reducir la curva de aprendizaje y facilitar el acceso a información técnica relevante.
                 </p>
                 <p>
-                    A través de esta evidencia se demuestra la aplicación práctica de buenas prácticas de calidad, alineadas con marcos de trabajo reconocidos como CMMI, ISO/IEC 25010, y metodologías ágiles. Los instrumentos han sido diseñados con herramientas TIC modernas y se presentan completamente diligenciados con datos de ejemplo de un proyecto de desarrollo real, facilitando su comprensión y posterior uso en contextos profesionales.
+                    A través de este trabajo se abordarán los fundamentos de calidad de software, se diseñarán instrumentos específicos para su gestión, se aplicarán procesos personales de desarrollo (PSP - Personal Software Process) y se documentarán metodologías que garanticen la entrega de productos de software de alta calidad.
                 </p>
             </div>
 
-            <!-- INFOGRAFÍA DE CALIDAD -->
+            <!-- FUNDAMENTOS DE CALIDAD DE SOFTWARE -->
             <div class="section">
-                <h2>🎨 Infografía: Proceso de Calidad de Software</h2>
+                <h2>1. Fundamentos de Calidad de Software</h2>
                 
-                <div class="infografia-container">
-                    <h3 class="infografia-title">🔄 Ciclo de Calidad de Software</h3>
-                    
-                    <div class="infografia-grid">
-                        <div class="infografia-card">
-                            <div class="infografia-icon">📋</div>
-                            <h4>Planificación</h4>
-                            <p>Definir estándares, métricas y procedimientos de calidad a aplicar</p>
-                        </div>
-                        
-                        <div class="infografia-card">
-                            <div class="infografia-icon">🔍</div>
-                            <h4>Revisión</h4>
-                            <p>Inspeccionar código, diseño y documentación técnica</p>
-                        </div>
-                        
-                        <div class="infografia-card">
-                            <div class="infografia-icon">🧪</div>
-                            <h4>Pruebas</h4>
-                            <p>Ejecutar pruebas unitarias, integración y sistema</p>
-                        </div>
-                        
-                        <div class="infografia-card">
-                            <div class="infografia-icon">📊</div>
-                            <h4>Medición</h4>
-                            <p>Recolectar métricas y datos de calidad del producto</p>
-                        </div>
-                        
-                        <div class="infografia-card">
-                            <div class="infografia-icon">🐛</div>
-                            <h4>Corrección</h4>
-                            <p>Identificar y resolver defectos encontrados</p>
-                        </div>
-                        
-                        <div class="infografia-card">
-                            <div class="infografia-icon">📈</div>
-                            <h4>Mejora</h4>
-                            <p>Analizar resultados e implementar mejoras continuas</p>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 30px; font-size: 1.2em;">
-                        <p><strong>✨ Resultado:</strong> Software de alta calidad que cumple con los requisitos y satisface al usuario</p>
-                    </div>
+                <h3>1.1 ¿Qué es la Calidad de Software?</h3>
+                <p>
+                    La calidad de software se define como el grado en que un producto de software cumple con los requisitos especificados y satisface las necesidades y expectativas del usuario. La norma ISO/IEC 25010 establece un modelo de calidad que incluye características como funcionalidad, confiabilidad, usabilidad, eficiencia, mantenibilidad y portabilidad.
+                </p>
+
+                <h3>1.2 Importancia de las Buenas Prácticas</h3>
+                <div class="highlight">
+                    <p><strong>Las buenas prácticas de calidad permiten:</strong></p>
+                    <ul class="lista">
+                        <li>Reducir costos de mantenimiento y corrección de errores</li>
+                        <li>Mejorar la productividad del equipo de desarrollo</li>
+                        <li>Aumentar la satisfacción del cliente</li>
+                        <li>Facilitar la escalabilidad y evolución del software</li>
+                        <li>Disminuir el tiempo de entrega de nuevas funcionalidades</li>
+                    </ul>
+                </div>
+
+                <h3>1.3 Marcos de Trabajo Principales</h3>
+                <div class="tabla-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Marco de Trabajo</th>
+                                <th>Enfoque Principal</th>
+                                <th>Aplicación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CMMI</strong></td>
+                                <td>Mejora de procesos</td>
+                                <td>Organizaciones que buscan madurez en sus procesos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO 9001</strong></td>
+                                <td>Sistema de gestión de calidad</td>
+                                <td>Certificación y estandarización de procesos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SCRUM</strong></td>
+                                <td>Desarrollo ágil iterativo</td>
+                                <td>Proyectos con requisitos cambiantes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO/IEC 25010</strong></td>
+                                <td>Modelo de calidad del producto</td>
+                                <td>Evaluación de características de calidad</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PSP/TSP</strong></td>
+                                <td>Proceso personal/equipo</td>
+                                <td>Mejora individual y de equipos pequeños</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <!-- INSTRUMENTOS DILIGENCIADOS -->
+            <!-- INSTRUMENTOS DE CALIDAD -->
             <div class="section">
-                <h2>📝 Instrumentos de Calidad Diligenciados</h2>
-                <p style="margin-bottom: 30px;">
-                    A continuación se presentan los instrumentos de calidad completamente diligenciados con información de un proyecto real de desarrollo: <strong>"Sistema de Gestión de Inventarios Web"</strong>
-                </p>
+                <h2>2. Instrumentos de Calidad de Software</h2>
 
-                <!-- INSTRUMENTO 1: CHECKLIST DE REVISIÓN DE CÓDIGO -->
                 <div class="instrumento">
-                    <div class="instrumento-header">
-                        <div class="instrumento-numero">1</div>
-                        <div>
-                            <h4>✅ Checklist de Revisión de Código</h4>
-                            <p style="margin: 5px 0 0 0; color: #6c757d;">Proyecto: Sistema de Gestión de Inventarios | Módulo: Autenticación de Usuarios</p>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <strong>Revisor:</strong> Sergio Afanador Bayona | 
-                        <strong>Fecha:</strong> 10/11/2025 | 
-                        <strong>Archivo:</strong> AuthController.java
-                    </div>
-                    
-                    <ul class="checklist">
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>El código sigue las convenciones de nomenclatura establecidas (camelCase para variables, PascalCase para clases)</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Las funciones no exceden 50 líneas de código (función más larga: 42 líneas)</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Existe documentación JavaDoc para todos los métodos públicos</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>No existen variables globales innecesarias</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Se implementan validaciones de entrada de datos (email, contraseña, tokens)</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>El código está libre de comentarios obsoletos</span>
-                        </li>
-                        <li>
-                            <span class="cross-icon">✗</span>
-                            <span>Se utilizan nombres descriptivos para variables y funciones (Observación: variable "temp" debe renombrarse)</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Se aplican principios SOLID (Single Responsibility, Dependency Injection)</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>Manejo adecuado de excepciones con try-catch</span>
-                        </li>
-                        <li>
-                            <span class="check-icon">✓</span>
-                            <span>No hay código duplicado (DRY principle aplicado)</span>
-                        </li>
+                    <h4>2.1 Checklist de Revisión de Código</h4>
+                    <p><strong>Objetivo:</strong> Verificar que el código cumple con estándares de calidad antes de su integración.</p>
+                    <ul class="lista">
+                        <li>✓ El código sigue las convenciones de nomenclatura establecidas</li>
+                        <li>✓ Las funciones no exceden 50 líneas de código</li>
+                        <li>✓ Existe documentación para métodos públicos</li>
+                        <li>✓ No existen variables globales innecesarias</li>
+                        <li>✓ Se implementan validaciones de entrada de datos</li>
+                        <li>✓ El código está libre de comentarios obsoletos</li>
+                        <li>✓ Se utilizan nombres descriptivos para variables y funciones</li>
+                        <li>✓ Se aplican principios SOLID cuando corresponde</li>
                     </ul>
-                    
-                    <div class="highlight-box" style="margin-top: 25px;">
-                        <h4>📌 Resultado de la Revisión</h4>
-                        <p><strong>Estado:</strong> <span class="status-badge status-revision">Aprobado con Observaciones</span></p>
-                        <p><strong>Puntuación:</strong> 9/10 criterios cumplidos (90%)</p>
-                        <p><strong>Acción requerida:</strong> Renombrar variable "temp" a "temporalToken" antes del merge</p>
-                    </div>
                 </div>
 
-                <!-- INSTRUMENTO 2: PLANTILLA DE PRUEBAS UNITARIAS -->
                 <div class="instrumento">
-                    <div class="instrumento-header">
-                        <div class="instrumento-numero">2</div>
-                        <div>
-                            <h4>🧪 Plantilla de Pruebas Unitarias</h4>
-                            <p style="margin: 5px 0 0 0; color: #6c757d;">Proyecto: Sistema de Gestión de Inventarios | Módulo: Gestión de Productos</p>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <strong>Responsable:</strong> Sergio Afanador Bayona | 
-                        <strong>Fecha:</strong> 11/11/2025 | 
-                        <strong>Framework:</strong> JUnit 5
-                    </div>
-                    
+                    <h4>2.2 Plantilla de Pruebas Unitarias</h4>
+                    <p><strong>Objetivo:</strong> Documentar casos de prueba para garantizar la funcionalidad correcta del código.</p>
                     <div class="tabla-container">
                         <table>
                             <thead>
                                 <tr>
                                     <th>ID Prueba</th>
                                     <th>Descripción</th>
-                                    <th>Entrada de Datos</th>
+                                    <th>Entrada</th>
                                     <th>Resultado Esperado</th>
                                     <th>Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>UT-001</strong></td>
-                                    <td>Crear producto válido</td>
-                                    <td>nombre: "Laptop HP", precio: 1500000, stock: 10</td>
-                                    <td>Producto creado con ID generado</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
+                                    <td>UT-001</td>
+                                    <td>Validar login con credenciales correctas</td>
+                                    <td>user: admin, pass: 1234</td>
+                                    <td>Acceso concedido</td>
+                                    <td>Pendiente</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>UT-002</strong></td>
-                                    <td>Crear producto con precio negativo</td>
-                                    <td>nombre: "Mouse", precio: -5000, stock: 20</td>
-                                    <td>Exception: "Precio debe ser positivo"</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>UT-003</strong></td>
-                                    <td>Actualizar stock de producto</td>
-                                    <td>productId: 1, cantidad: -5</td>
-                                    <td>Stock actualizado correctamente</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>UT-004</strong></td>
-                                    <td>Buscar producto por ID</td>
-                                    <td>productId: 999</td>
-                                    <td>Exception: "Producto no encontrado"</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>UT-005</strong></td>
-                                    <td>Eliminar producto existente</td>
-                                    <td>productId: 5</td>
-                                    <td>Producto eliminado, retorna true</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>UT-006</strong></td>
-                                    <td>Listar productos con filtro</td>
-                                    <td>categoria: "Electrónica", orden: "precio_asc"</td>
-                                    <td>Lista ordenada de productos</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>UT-007</strong></td>
-                                    <td>Validar nombre vacío</td>
-                                    <td>nombre: "", precio: 10000, stock: 5</td>
-                                    <td>Exception: "Nombre es requerido"</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>UT-008</strong></td>
-                                    <td>Actualizar producto completo</td>
-                                    <td>productId: 3, datos: {nombre, precio, stock}</td>
-                                    <td>Producto actualizado correctamente</td>
-                                    <td><span class="status-badge status-aprobado">✓ Pasó</span></td>
+                                    <td>UT-002</td>
+                                    <td>Validar login con credenciales incorrectas</td>
+                                    <td>user: admin, pass: wrong</td>
+                                    <td>Acceso denegado</td>
+                                    <td>Pendiente</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    
-                    <div class="highlight-box" style="margin-top: 25px;">
-                        <h4>📊 Resumen de Pruebas</h4>
-                        <p><strong>Total de Pruebas:</strong> 8</p>
-                        <p><strong>Pruebas Exitosas:</strong> 8 (100%)</p>
-                        <p><strong>Pruebas Fallidas:</strong> 0</p>
-                        <p><strong>Cobertura de Código:</strong> 87%</p>
-                        <p><strong>Tiempo de Ejecución:</strong> 1.243 segundos</p>
-                    </div>
                 </div>
 
-                <!-- INSTRUMENTO 3: REGISTRO DE DEFECTOS -->
                 <div class="instrumento">
-                    <div class="instrumento-header">
-                        <div class="instrumento-numero">3</div>
-                        <div>
-                            <h4>🐛 Registro de Defectos</h4>
-                            <p style="margin: 5px 0 0 0; color: #6c757d;">Proyecto: Sistema de Gestión de Inventarios | Sprint 3</p>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <strong>Período:</strong> 01/11/2025 - 12/11/2025 | 
-                        <strong>Coordinador de Calidad:</strong> Sergio Afanador Bayona
-                    </div>
-                    
+                    <h4>2.3 Registro de Defectos</h4>
+                    <p><strong>Objetivo:</strong> Documentar y hacer seguimiento a los errores detectados durante el desarrollo.</p>
                     <div class="tabla-container">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>ID Defecto</th>
                                     <th>Severidad</th>
-                                    <th>Módulo</th>
-                                    <th>Descripción del Defecto</th>
-                                    <th>Reportado por</th>
-                                    <th>Asignado a</th>
+                                    <th>Descripción</th>
+                                    <th>Responsable</th>
                                     <th>Estado</th>
-                                    <th>Fecha</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>DEF-001</strong></td>
-                                    <td><span class="status-badge status-critico">Crítica</span></td>
-                                    <td>Autenticación</td>
-                                    <td>Los usuarios pueden acceder sin autenticación a rutas protegidas usando bypass de URL</td>
-                                    <td>QA Team</td>
-                                    <td>Juan Pérez</td>
-                                    <td><span class="status-badge status-aprobado">Resuelto</span></td>
-                                    <td>03/11/2025</td>
+                                    <td>DEF-001</td>
+                                    <td>Alta</td>
+                                    <td>Error al guardar datos en formulario</td>
+                                    <td>Desarrollador A</td>
+                                    <td>Abierto</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>DEF-002</strong></td>
+                                    <td>DEF-002</td>
+                                    <td>Media</td>
+                                    <td>Botón de cancelar no funciona</td>
+                                    <td>Desarrollador B</td>
+                                    <td>En progreso</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="instrumento">
+                    <h4>2.4 Métrica de Calidad de Código</h4>
+                    <p><strong>Objetivo:</strong> Medir objetivamente la calidad del código producido.</p>
+                    <ul class="lista">
+                        <li><strong>Complejidad Ciclomática:</strong> Mide el número de caminos independientes (ideal < 10)</li>
+                        <li><strong>Cobertura de Código:</strong> Porcentaje de código cubierto por pruebas (meta > 80%)</li>
+                        <li><strong>Duplicación de Código:</strong> Porcentaje de código duplicado (meta < 5%)</li>
+                        <li><strong>Deuda Técnica:</strong> Tiempo estimado para corregir problemas de calidad</li>
+                        <li><strong>Densidad de Defectos:</strong> Número de defectos por cada 1000 líneas de código</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BUENAS PRÁCTICAS -->
+            <div class="section">
+                <h2>3. Buenas Prácticas de Calidad Seleccionadas</h2>
+
+                <h3>3.1 Prácticas de Codificación</h3>
+                <div class="instrumento">
+                    <h4>Clean Code (Código Limpio)</h4>
+                    <ul class="lista">
+                        <li><strong>Nombres significativos:</strong> Usar nombres descriptivos que revelen la intención</li>
+                        <li><strong>Funciones pequeñas:</strong> Una función debe hacer una sola cosa y hacerla bien</li>
+                        <li><strong>Comentarios mínimos:</strong> El código debe auto-documentarse, usar comentarios solo cuando sea necesario</li>
+                        <li><strong>Formato consistente:</strong> Mantener un estilo de código uniforme en todo el proyecto</li>
+                        <li><strong>Manejo de errores:</strong> Implementar try-catch apropiados y mensajes de error claros</li>
+                    </ul>
+                </div>
+
+                <h3>3.2 Prácticas de Testing</h3>
+                <div class="instrumento">
+                    <h4>Test Driven Development (TDD)</h4>
+                    <ul class="lista">
+                        <li><strong>Red:</strong> Escribir primero una prueba que falle</li>
+                        <li><strong>Green:</strong> Escribir el código mínimo para que la prueba pase</li>
+                        <li><strong>Refactor:</strong> Mejorar el código manteniendo las pruebas en verde</li>
+                        <li><strong>Automatización:</strong> Ejecutar pruebas automáticamente en cada commit</li>
+                        <li><strong>Pirámide de pruebas:</strong> Muchas unitarias, algunas de integración, pocas E2E</li>
+                    </ul>
+                </div>
+
+                <h3>3.3 Prácticas de Versionamiento</h3>
+                <div class="instrumento">
+                    <h4>Control de Versiones con Git</h4>
+                    <ul class="lista">
+                        <li><strong>Commits atómicos:</strong> Cada commit debe representar un cambio lógico completo</li>
+                        <li><strong>Mensajes descriptivos:</strong> Usar formato: "tipo: descripción breve"</li>
+                        <li><strong>Branching strategy:</strong> Implementar Git Flow o GitHub Flow</li>
+                        <li><strong>Code Review:</strong> Todo código debe ser revisado antes de merge</li>
+                        <li><strong>Pull Requests:</strong> Documentar cambios y solicitar retroalimentación</li>
+                    </ul>
+                </div>
+
+                <h3>3.4 Prácticas de Documentación</h3>
+                <div class="instrumento">
+                    <h4>Documentación Técnica</h4>
+                    <ul class="lista">
+                        <li><strong>README completo:</strong> Instrucciones de instalación, uso y contribución</li>
+                        <li><strong>API Documentation:</strong> Documentar endpoints, parámetros y respuestas</li>
+                        <li><strong>Diagramas UML:</strong> Casos de uso, clases, secuencia según necesidad</li>
+                        <li><strong>Changelog:</strong> Registro de cambios entre versiones</li>
+                        <li><strong>Wiki del proyecto:</strong> Decisiones de arquitectura y guías técnicas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROCESO PERSONAL PSP -->
+            <div class="section">
+                <h2>4. Proceso Personal de Desarrollo de Software (PSP)</h2>
+                
+                <p>
+                    El Personal Software Process (PSP) es un marco de trabajo desarrollado por Watts Humphrey en el SEI (Software Engineering Institute) que permite a los desarrolladores mejorar su desempeño individual mediante la medición y análisis de su propio trabajo.
+                </p>
+
+                <h3>4.1 Fases del PSP</h3>
+                <div class="proceso">
+                    <div class="proceso-item">
+                        <div class="proceso-numero">1</div>
+                        <h4>Planificación</h4>
+                        <p>Estimar tiempo y recursos necesarios basándose en datos históricos</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">2</div>
+                        <h4>Diseño</h4>
+                        <p>Crear diseño detallado antes de codificar, revisar diseño</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">3</div>
+                        <h4>Codificación</h4>
+                        <p>Implementar siguiendo estándares, registrar tiempo real</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">4</div>
+                        <h4>Revisión</h4>
+                        <p>Revisar código antes de compilar, registrar defectos</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">5</div>
+                        <h4>Compilación</h4>
+                        <p>Compilar y corregir errores de sintaxis</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">6</div>
+                        <h4>Pruebas</h4>
+                        <p>Ejecutar pruebas, registrar y corregir defectos</p>
+                    </div>
+                    <div class="proceso-item">
+                        <div class="proceso-numero">7</div>
+                        <h4>Post-mortem</h4>
+                        <p>Analizar datos, calcular métricas y mejorar estimaciones</p>
+                    </div>
+                </div>
+
+                <h3>4.2 Métricas del PSP</h3>
+                <div class="tabla-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Descripción</th>
+                                <th>Fórmula</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tamaño del Producto</strong></td>
+                                <td>Líneas de código (LOC)</td>
+                                <td>LOC totales - LOC reutilizadas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tiempo de Desarrollo</strong></td>
+                                <td>Minutos totales invertidos</td>
+                                <td>Suma de tiempo en cada fase</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Densidad de Defectos</strong></td>
+                                <td>Defectos por KLOC</td>
+                                <td>(Total defectos / LOC) × 1000</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rendimiento</strong></td>
+                                <td>LOC por hora</td>
+                                <td>LOC totales / Horas trabajadas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>4.3 Beneficios del PSP</h3>
+                <ul class="lista">
+                    <li>Mejora la precisión en estimaciones de tiempo y esfuerzo</li>
+                    <li>Reduce la cantidad de defectos inyectados en el código</li>
+                    <li>Aumenta la productividad personal</li>
+                    <li>Proporciona datos para la mejora continua</li>
+                    <li>Desarrolla disciplina en el proceso de desarrollo</li>
+                </ul>
+            </div>
+
+            <!-- DOCUMENTACIÓN DEL PROCESO -->
+            <div class="section">
+                <h2>5. Documentación del Proceso de Calidad</h2>
+
+                <h3>5.1 Plan de Gestión de Calidad</h3>
+                <div class="instrumento">
+                    <h4>Componentes del Plan</h4>
+                    <ul class="lista">
+                        <li><strong>Objetivos de Calidad:</strong> Definir metas específicas y medibles</li>
+                        <li><strong>Estándares Aplicables:</strong> ISO 9001, ISO 25010, estándares de codificación</li>
+                        <li><strong>Roles y Responsabilidades:</strong> Definir quién es responsable de cada actividad</li>
+                        <li><strong>Recursos Necesarios:</strong> Herramientas, tiempo, presupuesto</li>
+                        <li><strong>Cronograma de Actividades:</strong> Cuándo se ejecutarán las actividades de calidad</li>
+                        <li><strong>Métricas de Calidad:</strong> Qué se medirá y cómo se analizará</li>
+                        <li><strong>Proceso de Mejora:</strong> Cómo se implementarán las mejoras identificadas</li>
+                    </ul>
+                </div>
+
+                <h3>5.2 Procedimiento de Control de Calidad</h3>
+                <div class="instrumento">
+                    <h4>Actividades de Control</h4>
+                    <ol class="lista">
+                        <li><strong>Revisión de Requisitos:</strong> Verificar que requisitos sean claros y completos</li>
+                        <li><strong>Revisión de Diseño:</strong> Evaluar arquitectura y diseño técnico</li>
+                        <li><strong>Inspección de Código:</strong> Revisión por pares de código desarrollado</li>
+                        <li><strong>Ejecución de Pruebas:</strong> Pruebas unitarias, integración y sistema</li>
+                        <li><strong>Análisis de Métricas:</strong> Evaluar métricas de calidad del código</li>
+                        <li><strong>Auditoría de Proceso:</strong> Verificar cumplimiento del proceso definido</li>
+                    </ol>
+                </div>
+
+                <h3>5.3 Herramientas TIC para Calidad</h3>
+                <div class="tabla-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Herramienta</th>
+                                <th>Categoría</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SonarQube</strong></td>
+                                <td>Análisis estático</td>
+                                <td>Detectar bugs, vulnerabilidades y code smells</td>
+                            </tr>
+                            <tr>
+                                <td><strong>JUnit / Jest</strong></td>
+                                <td>Testing</td>
+                                <td>Pruebas unitarias automatizadas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Selenium</strong></td>
+                                <td>Testing</td>
+                                <td>Pruebas de interfaz automatizadas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Git / GitHub</strong></td>
+                                <td>Versionamiento</td>
+                                <td>Control de versiones y colaboración</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jira</strong></td>
+                                <td>Gestión</td>
+                                <td>Seguimiento de tareas y defectos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jenkins</strong></td>
+                                <td>CI/CD</td>
+                                <td>Integración y despliegue continuo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ESLint / Prettier</strong></td>
+                                <td>Linting</td>
+                                <td>Formateo y verificación de estilo de código</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CONCLUSIONES -->
+            <div class="section">
+                <h2>Conclusiones</h2>
+                <div class="conclusiones-list">
+                    <ol class="lista">
+                        <li>
+                            <strong>La implementación de buenas prácticas de calidad es esencial</strong> para el desarrollo de software moderno. No se trata solo de cumplir con estándares, sino de crear una cultura de calidad que permea todas las fases del desarrollo y garantiza productos superiores que satisfacen las necesidades del usuario final.
+                        </li>
+                        <li>
+                            <strong>Los instrumentos de calidad diseñados</strong> (checklists, plantillas de pruebas, registros de defectos y métricas) proporcionan herramientas concretas y aplicables que facilitan la gestión sistemática de la calidad. Estos instrumentos no solo documentan el proceso, sino que también permiten la mejora continua basada en datos objetivos.
+                        </li>
+                        <li>
+                            <strong>El Proceso Personal de Desarrollo de Software (PSP)</strong> demuestra ser una metodología
